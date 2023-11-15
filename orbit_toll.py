@@ -14,6 +14,6 @@ def cal_r_by_T(T:int)->int:
     return:
         r: orbit radium
     """
-    return math.pow((G*M*T^2)/(4*math.pi()),1.0/3)
+    return ( (G*M*T**2) / (4*math.pi**2) ) ** (1/3)
 
-print(cal_r_by_T(1.5*3600))
+# print(cal_r_by_T(1.5*3600)-R)
