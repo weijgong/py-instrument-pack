@@ -1,3 +1,13 @@
+'''
+Author: gongweijing 876887913@qq.com
+Date: 2023-11-16 10:54:53
+LastEditors: gongweijing 876887913@qq.com
+LastEditTime: 2023-11-20 16:10:53
+FilePath: /gongweijing/GeneticAlgorithmsWithPython/ch01/guessPasswordTests.py
+Description: 
+
+Copyright (c) 2023 by ${git_name_email}, All Rights Reserved. 
+'''
 # File: guessPasswordTests.py
 #    from chapter 1 of _Genetic Algorithms with Python_
 #
@@ -21,12 +31,22 @@ import unittest
 
 import genetic
 
-
+'''
+description: 
+param {*} guess 猜测的基因序列值
+param {*} target 目标的基因序列值
+return {*}
+'''
 def get_fitness(guess, target):
     return sum(1 for expected, actual in zip(target, guess)
                if expected == actual)
 
-
+'''
+description: 展示函数
+param {*} candidate 候选的染色体（最优解）
+param {*} startTime 函数开始执行时间
+return {*} 输出候选染色体的基因序列、适应度，并输出函数执行到现在的执行时间
+'''
 def display(candidate, startTime):
     timeDiff = datetime.datetime.now() - startTime
     print("{}\t{}\t{}".format(
@@ -44,6 +64,12 @@ class GuessPasswordTests(unittest.TestCase):
         target = "For I am fearfully and wonderfully made."
         self.guess_password(target)
 
+    '''
+    description: 猜数方法
+    param {*} self 
+    param {*} target 目标的密码序列
+    return {*}
+    '''    
     def guess_password(self, target):
         startTime = datetime.datetime.now()
 
