@@ -1,19 +1,13 @@
-# File: genetic.py
-#    from chapter 3 of _Genetic Algorithms with Python_
-#
-# Author: Clinton Sheppard <fluentcoder@gmail.com>
-# Copyright (c) 2016 Clinton Sheppard
-#
-# Licensed under the Apache License, Version 2.0 (the "License").
-# You may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#   http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
-# implied.  See the License for the specific language governing
-# permissions and limitations under the License.
+'''
+Author: gongweijing 876887913@qq.com
+Date: 2023-11-16 10:54:53
+LastEditors: gongweijing 876887913@qq.com
+LastEditTime: 2023-11-21 19:25:52
+FilePath: /gongweijing/GeneticAlgorithmsWithPython/ch03/genetic.py
+Description: 
+
+Copyright (c) 2023 by ${git_name_email}, All Rights Reserved. 
+'''
 
 import random
 import statistics
@@ -53,7 +47,13 @@ def get_best(get_fitness, targetLen, optimalFitness, geneSet, display):
         if not optimalFitness > improvement.Fitness:
             return improvement
 
-
+'''
+description: 代替了原本函数中变异+迭代的代码编写方法
+param {*} new_child 获取新的子代的算法
+param {*} generate_parent 生成初始种群的算法
+return {*}
+'''
+# yield的作用是让每次遍历返回的数值随着迭代次数不断变化
 def _get_improvement(new_child, generate_parent):
     bestParent = generate_parent()
     yield bestParent
