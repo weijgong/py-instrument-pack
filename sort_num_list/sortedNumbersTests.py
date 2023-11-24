@@ -2,7 +2,7 @@
 Author: gongweijing 876887913@qq.com
 Date: 2023-11-16 10:54:53
 LastEditors: gongweijing 876887913@qq.com
-LastEditTime: 2023-11-21 16:41:35
+LastEditTime: 2023-11-22 09:36:51
 FilePath: /gongweijing/GeneticAlgorithmsWithPython/ch03/sortedNumbersTests.py
 Description: 
 
@@ -39,7 +39,10 @@ def display(candidate, startTime):
         candidate.Fitness,
         timeDiff))
 
-
+'''
+description: 最终的优化目标是让所有的元素满足从小到大的顺序,并不存在gap值,即10 Sequential,0 Total Gap
+return {*}
+'''
 class SortedNumbersTests(unittest.TestCase):
     def test_sort_10_numbers(self):
         self.sort_numbers(10)
@@ -62,7 +65,10 @@ class SortedNumbersTests(unittest.TestCase):
     def test_benchmark(self):
         genetic.Benchmark.run(lambda: self.sort_numbers(40))
 
-
+'''
+description: Fitness类包含了两个部分(满足顺序排序的元素个数,不满足顺序排序的元素差值的和)
+return {*} 
+'''
 class Fitness:
     def __init__(self, numbersInSequenceCount, totalGap):
         self.NumbersInSequenceCount = numbersInSequenceCount
