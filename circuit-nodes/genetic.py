@@ -163,7 +163,10 @@ def _get_improvement(new_child, generate_parent, maxAge, poolSize,
             yield False, bestParent
             historicalFitnesses.append(bestParent.Fitness)
 
-
+'''
+description: 爬山法进行最优解搜索
+return {*}
+'''
 def hill_climbing(optimizationFunction, is_improvement, is_optimal,
                   get_next_feature_value, display, initialFeatureValue):
     best = optimizationFunction(initialFeatureValue)
